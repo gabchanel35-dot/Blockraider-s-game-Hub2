@@ -1,0 +1,130 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: white;
+  margin: 0;
+  padding: 0;
+  transition: background 1s;
+}
+
+/* INTRO SCREEN */
+#intro {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url('https://tr.rbxcdn.com/7b39d93d3bba6f9c38c3f02093d65ae4/420/420/Image/Png') no-repeat center;
+  background-size: cover;
+  transition: opacity 0.6s ease;
+}
+
+.roblox-logo {
+  width: 120px;
+  margin-bottom: 20px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.logo {
+  font-size: 3em;
+  font-weight: bold;
+  text-shadow: 0 0 15px #00bfff, 0 0 30px #1e90ff, 0 0 50px #00ffff;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+/* ENTER BUTTON */
+.enter-btn {
+  margin-top: 30px;
+  padding: 12px 30px;
+  font-size: 1.3em;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  background: #ff4747;
+  color: white;
+  box-shadow: 0 0 15px #ff4747, 0 0 30px #ff6b6b;
+  animation: pulse 1.5s infinite;
+  transition: transform 0.3s;
+}
+.enter-btn:hover { transform: scale(1.1); }
+
+/* MAIN CONTENT */
+#main {
+  transition: opacity 0.6s ease;
+  padding: 30px;
+}
+
+/* GAME GRID */
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.game-card {
+  background: #1a1a1a;
+  border-radius: 15px;
+  padding: 15px;
+  box-shadow: 0 0 10px #00bfff33;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.game-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  display: block;
+}
+.game-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px #00bfff99;
+}
+
+/* PLAY BUTTON */
+.play-btn {
+  display: inline-block;
+  padding: 10px 25px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: white;
+  background: #00bfff;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 0 10px #00bfff, 0 0 20px #00ffff;
+  transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.play-btn:hover {
+  background: #1e90ff;
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #00ffff, 0 0 30px #00bfff;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 10px #ff4747, 0 0 20px #ff6b6b; }
+  50%  { box-shadow: 0 0 20px #ff4747, 0 0 40px #ff6b6b; }
+  100% { box-shadow: 0 0 10px #ff4747, 0 0 20px #ff6b6b; }
+}
+.roblox-logo {
+  width: 250px;
+  margin-bottom: 20px;
+  opacity: 0;
+  animation: fadeInLogo 2s ease-in-out forwards;
+}
+
+@keyframes fadeInLogo {
+  from { opacity: 0; transform: scale(0.9); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+#intro-content {
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1.5s ease;
+}
